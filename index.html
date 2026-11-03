@@ -7,229 +7,302 @@
 <title>For Sumaiya 💗</title>
 
 <style>
-* { box-sizing: border-box; }
-
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  min-height: 100vh;
-  font-family: Georgia, serif;
-  background: linear-gradient(135deg,#ffe1ed,#e9dcff,#fff0df);
-  color: #925c78;
-  text-align: center;
-  overflow-x: hidden;
+  padding: 0;
 }
 
-.wrap {
+body {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  font-family: Georgia, serif;
+  color: #925c78;
+  background: linear-gradient(135deg,#ffe1ed,#e9dcff,#fff0df);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 20px;
   align-items: center;
-  padding: 22px 14px;
+  justify-content: center;
+}
+
+.screen.active {
+  display: flex;
+  animation: appear .8s ease;
+}
+
+@keyframes appear {
+  from {opacity:0; transform:translateY(15px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
 .card {
-  background: rgba(255,255,255,.87);
   width: 100%;
   max-width: 430px;
-  padding: 30px 22px;
+  padding: 35px 23px;
   border-radius: 28px;
-  box-shadow: 0 15px 45px #b98ba533;
-  border: 1px solid white;
-  animation: appear 1s ease;
+  background: rgba(255,255,255,.83);
+  box-shadow: 0 15px 50px #a56c8a25;
+  border: 1px solid #ffffff;
 }
 
-h1 { color: #c66e9a; font-size: 30px; }
-h2 { color: #bd7aa0; }
+.small {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: #bd83a3;
+}
 
-p { line-height: 1.8; }
+h1 {
+  font-size: 34px;
+  margin: 12px 0;
+  color: #a44f7d;
+}
+
+h2 {
+  font-size: 26px;
+  margin: 15px 0;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 16px;
+  margin: 14px 0;
+}
 
 .gift {
-  font-size: 110px;
-  margin: 22px;
+  font-size: 95px;
+  margin: 28px 0;
   cursor: pointer;
-  animation: bounce 1.5s infinite;
+  display: inline-block;
+  animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+  0%,100% {transform:translateY(0) rotate(0);}
+  50% {transform:translateY(-12px) rotate(5deg);}
 }
 
 button {
-  background: linear-gradient(120deg,#ef9dbc,#bca1e9);
-  color: white;
   border: none;
   padding: 14px 25px;
   border-radius: 30px;
-  font-size: 16px;
+  background: linear-gradient(120deg,#d88caf,#ad83ca);
+  color: white;
+  font-size: 15px;
+  font-family: Georgia,serif;
+  cursor: pointer;
   margin-top: 15px;
+  box-shadow: 0 6px 18px #b27caa35;
+}
+
+button:active {transform:scale(.96);}
+
+.hint {
+  font-size: 13px;
+  color: #b77b9a;
+}
+
+.cake {
+  font-size: 100px;
+  margin: 20px 0;
   cursor: pointer;
 }
 
-button:active { transform: scale(.95); }
-
-.hidden { display: none; }
-
-.cake {
-  font-size: 90px;
-  margin: 15px;
+.candle {
+  font-size: 25px;
+  display: inline-block;
+  animation: glow 1s infinite alternate;
 }
+
+@keyframes glow {
+  from {filter:brightness(1);}
+  to {filter:brightness(1.8);}
+}
+
+.envelope {
+  font-size: 95px;
+  cursor: pointer;
+  margin: 25px 0;
+  display: inline-block;
+  transition: transform .5s;
+}
+
+.envelope:hover {transform:scale(1.12);}
 
 .letter {
-  background: #fff6fa;
-  border: 1px dashed #d99cbb;
-  border-radius: 20px;
-  padding: 20px;
+  display: none;
   text-align: left;
+  padding: 20px;
+  background: #fff4f7;
+  border-radius: 18px;
   line-height: 1.9;
+  margin-top: 15px;
+  animation: appear .8s ease;
 }
 
-.letter h2 { text-align: center; }
+.letter.show {display:block;}
+
+.signature {
+  color: #ad6590;
+  font-size: 23px;
+  font-style: italic;
+  margin-top: 20px;
+}
 
 .heart {
   position: fixed;
   bottom: -30px;
-  animation: float 5s linear forwards;
   pointer-events: none;
+  animation: floatUp 6s linear forwards;
+  z-index: 5;
 }
 
-.footer {
-  margin-top: 25px;
-  font-size: 12px;
-  color: #b18ca3;
+@keyframes floatUp {
+  to {transform:translateY(-110vh) rotate(360deg);opacity:0;}
 }
 
-@keyframes bounce {
-  50% { transform: translateY(-13px) rotate(5deg); }
+button:focus-visible,.gift:focus-visible,.envelope:focus-visible {
+  outline: 3px solid #a44f7d;
+  outline-offset: 5px;
 }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes float {
-  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+@media(max-width:380px) {
+  h1 {font-size:29px;}
+  .card {padding:28px 17px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrap">
-
-<section class="card" id="one">
-  <p>♡ A little something made for you ♡</p>
-  <h1>Hey, Sumaiya! 🌷</h1>
-  <p>Someone special deserves a little surprise...</p>
-
-  <div class="gift" onclick="openGift()">🎁</div>
-
-  <p>There's something waiting inside!</p>
-  <button onclick="openGift()">Open your gift 💗</button>
-  <div class="footer">Made with friendship and lots of love</div>
-</section>
-
-<section class="card hidden" id="two">
-  <p>Today is your special day!</p>
-  <h1>Happy Birthday! 🎀</h1>
-  <div class="cake">🎂</div>
-  <h2>Dear Sumaiya,</h2>
-  <p>
-    May your day be filled with beautiful moments,
-    endless smiles and little things that make you happy.
-  </p>
-  <p>You deserve all the wonderful things in life. 💕</p>
-  <button onclick="showLetter()">Open your little letter 💌</button>
-</section>
-
-<section class="card hidden" id="three">
-  <h1>A letter for you 💌</h1>
-
-  <div class="letter">
-    <h2>Dear Sumaiya, 🌸</h2>
-
-    <p>Happy Birthday! ❤️</p>
-
-    <p>
-      I just wanted to remind you that you are
-      a special person and you deserve all the
-      happiness this world has to offer.
-    </p>
-
-    <p>
-      May your days be filled with laughter,
-      your heart with peace, and your life
-      with countless beautiful memories.
-    </p>
-
-    <p>
-      Never stop being the wonderful person
-      you are. I hope this new chapter brings
-      you beautiful opportunities and everything
-      your heart wishes for.
-    </p>
-
-    <p>
-      Thank you for being a part of my life.
-      I'm genuinely glad to have you as my friend.
-    </p>
-
-    <p>
-      Keep smiling, keep shining and always
-      take care of yourself. 🥹
-    </p>
-
-    <h2>With lots of wishes,</h2>
-    <h2>Your friend 💗</h2>
-  </div>
-
-  <button onclick="finalSurprise()">One last surprise 🎉</button>
-
-  <div id="final" class="hidden">
-    <h1>You're amazing! 🌷</h1>
-    <p>
-      May Allah bless you with happiness,
-      good health and endless barakah. 🤍
-    </p>
-    <h2>Happy Birthday, Sumaiya! 💗</h2>
-    <div style="font-size:38px">🌸 🦋 💕 ✨</div>
-  </div>
-</section>
-
+<!-- SCREEN 1 -->
+<section class="screen active" id="s1">
+<div class="card">
+  <div class="small">A little surprise for someone special</div>
+  <h1>Hey, Sumaiya! 💗</h1>
+  <p>Someone has prepared something special for you...</p>
+  <div class="gift" onclick="next(2)">🎁</div>
+  <p class="hint">Tap the gift to open your surprise ✨</p>
+  <p style="font-size:13px;">Made with love by Rehan</p>
 </div>
+</section>
+
+<!-- SCREEN 2 -->
+<section class="screen" id="s2">
+<div class="card">
+  <div class="small">Today is all about you</div>
+  <h1>Happy Birthday! 🎂</h1>
+  <h2>Dear Sumaiya 💕</h2>
+  <p>May your day be filled with smiles, laughter, beautiful memories and all the happiness your heart deserves.</p>
+  <div class="cake" onclick="blow()">🎂</div>
+  <div id="candles" class="candle">🕯️ 🕯️ 🕯️</div>
+  <p class="hint" id="cakeHint">Tap the cake to blow out the candles!</p>
+  <button onclick="next(3)">Continue ✨</button>
+</div>
+</section>
+
+<!-- SCREEN 3 -->
+<section class="screen" id="s3">
+<div class="card">
+  <div class="small">A little something from my heart</div>
+  <h1>A Letter for You 💌</h1>
+  <p>There are some wishes that are better written than spoken...</p>
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <p class="hint" id="letterHint">Tap the envelope to open your letter</p>
+
+  <div class="letter" id="letter">
+    Dear Sumaiya,
+
+    <p>On your special day, I just want to wish you endless happiness, peaceful days and countless reasons to smile.</p>
+
+    <p>May every little dream you carry in your heart find its way to reality. May life bring you beautiful surprises, wonderful opportunities and people who genuinely care about you.</p>
+
+    <p>Thank you for being a part of my journey. I hope this little surprise brings a smile to your face.</p>
+
+    <p>Stay happy, keep smiling and always be yourself. 💗</p>
+
+    <div class="signature">With best wishes,<br>Rehan ❤️</div>
+  </div>
+
+  <button onclick="next(4)">One last thing... 🌷</button>
+</div>
+</section>
+
+<!-- SCREEN 4 -->
+<section class="screen" id="s4">
+<div class="card">
+  <div class="small">A wish just for you</div>
+  <h1>Keep Shining, Sumaiya! ✨</h1>
+  <div style="font-size:65px;margin:20px;">🌸 🦋 🌷</div>
+  <p>May Allah bless you with good health, peace, success and happiness.</p>
+  <p>May He protect you from every hardship and fill your life with countless blessings. Ameen. 🤍</p>
+  <h2>Never stop smiling! 💗</h2>
+  <div class="signature">This little surprise was made just for you,<br>Rehan ❤️</div>
+  <button onclick="celebrate()">Celebrate Again! 🎉</button>
+  <p class="hint">Made with care, just for your special day.</p>
+</div>
+</section>
 
 <script>
-function changePage(oldId,newId) {
-  document.getElementById(oldId).classList.add("hidden");
-  document.getElementById(newId).classList.remove("hidden");
+function next(number) {
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+  });
+  document.getElementById('s'+number).classList.add('active');
   window.scrollTo(0,0);
+  if(number === 2 || number === 4) celebrate();
 }
 
-function openGift() {
-  changePage("one","two");
+let blown = false;
+
+function blow() {
+  if(blown) return;
+  blown = true;
+  document.getElementById('candles').innerHTML = '💨 ✨ 💨';
+  document.getElementById('cakeHint').innerText =
+    'Wish made? May it come true! 💗';
   celebrate();
 }
 
-function showLetter() {
-  changePage("two","three");
-  celebrate();
-}
-
-function finalSurprise() {
-  document.getElementById("final").classList.remove("hidden");
+function openLetter() {
+  document.getElementById('letter').classList.add('show');
+  document.getElementById('letterHint').innerText =
+    'A little message from Rehan ❤️';
   celebrate();
 }
 
 function celebrate() {
-  const emojis = ["💗","💕","🌸","✨","🦋","💖"];
-
-  for(let i=0;i<35;i++) {
-    let item = document.createElement("div");
-    item.className = "heart";
-    item.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-    item.style.left = Math.random()*100+"vw";
-    item.style.fontSize = (15+Math.random()*20)+"px";
-    item.style.animationDuration = (3+Math.random()*4)+"s";
+  const emojis = ['💗','✨','🌸','💕','🎉','🦋'];
+  for(let i=0;i<22;i++) {
+    const item = document.createElement('div');
+    item.className = 'heart';
+    item.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+    item.style.left = Math.random()*100+'vw';
+    item.style.animationDuration = (3+Math.random()*4)+'s';
+    item.style.fontSize = (15+Math.random()*20)+'px';
     document.body.appendChild(item);
-    setTimeout(()=>item.remove(),7500);
+    setTimeout(()=>item.remove(),7000);
   }
 }
+
+setInterval(()=>{
+  if(document.visibilityState === 'visible' && Math.random() > .45) {
+    const item = document.createElement('div');
+    item.className = 'heart';
+    item.innerText = '♡';
+    item.style.left = Math.random()*100+'vw';
+    item.style.animationDuration = '6s';
+    item.style.fontSize = '22px';
+    document.body.appendChild(item);
+    setTimeout(()=>item.remove(),6000);
+  }
+},1800);
 </script>
 
 </body>
