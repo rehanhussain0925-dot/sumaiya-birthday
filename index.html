@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sumaiya 💗</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg,#ffe1ed,#e9dcff,#fff0df);
+  color: #925c78;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 14px;
+}
+
+.card {
+  background: rgba(255,255,255,.87);
+  width: 100%;
+  max-width: 430px;
+  padding: 30px 22px;
+  border-radius: 28px;
+  box-shadow: 0 15px 45px #b98ba533;
+  border: 1px solid white;
+  animation: appear 1s ease;
+}
+
+h1 { color: #c66e9a; font-size: 30px; }
+h2 { color: #bd7aa0; }
+
+p { line-height: 1.8; }
+
+.gift {
+  font-size: 110px;
+  margin: 22px;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+}
+
+button {
+  background: linear-gradient(120deg,#ef9dbc,#bca1e9);
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+button:active { transform: scale(.95); }
+
+.hidden { display: none; }
+
+.cake {
+  font-size: 90px;
+  margin: 15px;
+}
+
+.letter {
+  background: #fff6fa;
+  border: 1px dashed #d99cbb;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+  line-height: 1.9;
+}
+
+.letter h2 { text-align: center; }
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 5s linear forwards;
+  pointer-events: none;
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #b18ca3;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-13px) rotate(5deg); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<section class="card" id="one">
+  <p>♡ A little something made for you ♡</p>
+  <h1>Hey, Sumaiya! 🌷</h1>
+  <p>Someone special deserves a little surprise...</p>
+
+  <div class="gift" onclick="openGift()">🎁</div>
+
+  <p>There's something waiting inside!</p>
+  <button onclick="openGift()">Open your gift 💗</button>
+  <div class="footer">Made with friendship and lots of love</div>
+</section>
+
+<section class="card hidden" id="two">
+  <p>Today is your special day!</p>
+  <h1>Happy Birthday! 🎀</h1>
+  <div class="cake">🎂</div>
+  <h2>Dear Sumaiya,</h2>
+  <p>
+    May your day be filled with beautiful moments,
+    endless smiles and little things that make you happy.
+  </p>
+  <p>You deserve all the wonderful things in life. 💕</p>
+  <button onclick="showLetter()">Open your little letter 💌</button>
+</section>
+
+<section class="card hidden" id="three">
+  <h1>A letter for you 💌</h1>
+
+  <div class="letter">
+    <h2>Dear Sumaiya, 🌸</h2>
+
+    <p>Happy Birthday! ❤️</p>
+
+    <p>
+      I just wanted to remind you that you are
+      a special person and you deserve all the
+      happiness this world has to offer.
+    </p>
+
+    <p>
+      May your days be filled with laughter,
+      your heart with peace, and your life
+      with countless beautiful memories.
+    </p>
+
+    <p>
+      Never stop being the wonderful person
+      you are. I hope this new chapter brings
+      you beautiful opportunities and everything
+      your heart wishes for.
+    </p>
+
+    <p>
+      Thank you for being a part of my life.
+      I'm genuinely glad to have you as my friend.
+    </p>
+
+    <p>
+      Keep smiling, keep shining and always
+      take care of yourself. 🥹
+    </p>
+
+    <h2>With lots of wishes,</h2>
+    <h2>Your friend 💗</h2>
+  </div>
+
+  <button onclick="finalSurprise()">One last surprise 🎉</button>
+
+  <div id="final" class="hidden">
+    <h1>You're amazing! 🌷</h1>
+    <p>
+      May Allah bless you with happiness,
+      good health and endless barakah. 🤍
+    </p>
+    <h2>Happy Birthday, Sumaiya! 💗</h2>
+    <div style="font-size:38px">🌸 🦋 💕 ✨</div>
+  </div>
+</section>
+
+</div>
+
+<script>
+function changePage(oldId,newId) {
+  document.getElementById(oldId).classList.add("hidden");
+  document.getElementById(newId).classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+
+function openGift() {
+  changePage("one","two");
+  celebrate();
+}
+
+function showLetter() {
+  changePage("two","three");
+  celebrate();
+}
+
+function finalSurprise() {
+  document.getElementById("final").classList.remove("hidden");
+  celebrate();
+}
+
+function celebrate() {
+  const emojis = ["💗","💕","🌸","✨","🦋","💖"];
+
+  for(let i=0;i<35;i++) {
+    let item = document.createElement("div");
+    item.className = "heart";
+    item.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    item.style.left = Math.random()*100+"vw";
+    item.style.fontSize = (15+Math.random()*20)+"px";
+    item.style.animationDuration = (3+Math.random()*4)+"s";
+    document.body.appendChild(item);
+    setTimeout(()=>item.remove(),7500);
+  }
+}
+</script>
+
+</body>
+</html>
